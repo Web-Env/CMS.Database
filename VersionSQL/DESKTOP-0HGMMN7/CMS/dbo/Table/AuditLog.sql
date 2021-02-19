@@ -8,7 +8,7 @@ CREATE TABLE [dbo].[AuditLog](
 	[Action] [smallint] NOT NULL,
 	[UserId] [uniqueidentifier] NOT NULL,
 	[UserAddress] [varchar](15) NOT NULL,
-	[OccuredOn] [datetime] NOT NULL,
+	[OccurredOn] [datetime] NOT NULL,
  CONSTRAINT [PK_AuditLog] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
