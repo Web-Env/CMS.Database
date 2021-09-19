@@ -1,4 +1,4 @@
-/****** Object:  Table [dbo].[AuditLog]    Committed by VersionSQL https://www.versionsql.com ******/
+﻿/****** Object:  Table [dbo].[AuditLog]    Committed by VersionSQL https://www.versionsql.com ******/
 
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
@@ -16,6 +16,3 @@ CREATE TABLE [dbo].[AuditLog](
 ) ON [PRIMARY]
 
 ALTER TABLE [dbo].[AuditLog] ADD  CONSTRAINT [DF_AuditLog_Id]  DEFAULT (newsequentialid()) FOR [Id]
-ALTER TABLE [dbo].[AuditLog]  WITH CHECK ADD  CONSTRAINT [FK_AuditLog_User] FOREIGN KEY([UserId])
-REFERENCES [dbo].[User] ([Id])
-ALTER TABLE [dbo].[AuditLog] CHECK CONSTRAINT [FK_AuditLog_User]
