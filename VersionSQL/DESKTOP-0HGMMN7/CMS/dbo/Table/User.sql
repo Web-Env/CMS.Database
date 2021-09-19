@@ -1,14 +1,16 @@
-/****** Object:  Table [dbo].[User]    Committed by VersionSQL https://www.versionsql.com ******/
+﻿/****** Object:  Table [dbo].[User]    Committed by VersionSQL https://www.versionsql.com ******/
 
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 CREATE TABLE [dbo].[User](
 	[Id] [uniqueidentifier] NOT NULL,
 	[Email] [varchar](150) NOT NULL,
-	[Password] [varchar](60) NOT NULL,
+	[Password] [char](60) NOT NULL,
+	[UserSecret] [char](344) NOT NULL,
 	[FirstName] [varchar](50) NOT NULL,
 	[LastName] [varchar](100) NOT NULL,
 	[IsAdmin] [bit] NOT NULL,
+	[IsVerified] [bit] NOT NULL,
 	[CreatedOn] [datetime] NOT NULL,
 	[CreatedBy] [uniqueidentifier] NOT NULL,
 	[LastUpdatedOn] [datetime] NOT NULL,
@@ -21,3 +23,4 @@ CREATE TABLE [dbo].[User](
 
 ALTER TABLE [dbo].[User] ADD  CONSTRAINT [DF_User_Id]  DEFAULT (newsequentialid()) FOR [Id]
 ALTER TABLE [dbo].[User] ADD  CONSTRAINT [DF_User_IsAdmin]  DEFAULT ((0)) FOR [IsAdmin]
+ALTER TABLE [dbo].[User] ADD  CONSTRAINT [DF_User_IsVerified]  DEFAULT ((0)) FOR [IsVerified]
