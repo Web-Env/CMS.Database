@@ -10,7 +10,7 @@ CREATE TABLE [dbo].[UserVerification](
 	[Active] [bit] NOT NULL,
 	[RequesterAddress] [varchar](15) NOT NULL,
 	[UsedOn] [datetime] NULL,
-	[UsedAddress] [varchar](15) NULL,
+	[UsedByAddress] [varchar](15) NULL,
 	[CreatedOn] [datetime] NOT NULL,
 	[LastUpdatedOn] [datetime] NOT NULL,
  CONSTRAINT [PK_UserVerification] PRIMARY KEY CLUSTERED 
