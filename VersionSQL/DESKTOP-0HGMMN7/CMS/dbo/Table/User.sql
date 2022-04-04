@@ -5,7 +5,7 @@ SET QUOTED_IDENTIFIER ON
 CREATE TABLE [dbo].[User](
 	[Id] [uniqueidentifier] NOT NULL,
 	[Email] [varchar](150) NOT NULL,
-	[Password] [char](60) NOT NULL,
+	[Password] [char](60) NULL,
 	[UserSecret] [char](344) NOT NULL,
 	[FirstName] [varchar](50) NOT NULL,
 	[LastName] [varchar](100) NOT NULL,
