@@ -20,3 +20,4 @@ CREATE TABLE [dbo].[PasswordReset](
 ) ON [PRIMARY]
 
 ALTER TABLE [dbo].[PasswordReset] ADD  CONSTRAINT [DF_PasswordReset_Id]  DEFAULT (newsequentialid()) FOR [Id]
+ALTER TABLE [dbo].[PasswordReset] ADD  CONSTRAINT [DF_PasswordReset_Active]  DEFAULT ((1)) FOR [Active]

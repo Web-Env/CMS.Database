@@ -1,8 +1,8 @@
-/****** Object:  Table [dbo].[Entry]    Committed by VersionSQL https://www.versionsql.com ******/
+﻿/****** Object:  Table [dbo].[Content]    Committed by VersionSQL https://www.versionsql.com ******/
 
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
-CREATE TABLE [dbo].[Entry](
+CREATE TABLE [dbo].[Content](
 	[Id] [uniqueidentifier] NOT NULL,
 	[Title] [varchar](250) NOT NULL,
 	[SectionId] [uniqueidentifier] NULL,
@@ -20,13 +20,13 @@ CREATE TABLE [dbo].[Entry](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 
-ALTER TABLE [dbo].[Entry] ADD  CONSTRAINT [DF_Entry_Id]  DEFAULT (newsequentialid()) FOR [Id]
-ALTER TABLE [dbo].[Entry]  WITH CHECK ADD  CONSTRAINT [FK_Entry_Section] FOREIGN KEY([SectionId])
+ALTER TABLE [dbo].[Content] ADD  CONSTRAINT [DF_Entry_Id]  DEFAULT (newsequentialid()) FOR [Id]
+ALTER TABLE [dbo].[Content]  WITH CHECK ADD  CONSTRAINT [FK_Content_Section] FOREIGN KEY([SectionId])
 REFERENCES [dbo].[Section] ([Id])
-ALTER TABLE [dbo].[Entry] CHECK CONSTRAINT [FK_Entry_Section]
-ALTER TABLE [dbo].[Entry]  WITH CHECK ADD  CONSTRAINT [FK_Entry_User] FOREIGN KEY([CreatedBy])
+ALTER TABLE [dbo].[Content] CHECK CONSTRAINT [FK_Content_Section]
+ALTER TABLE [dbo].[Content]  WITH CHECK ADD  CONSTRAINT [FK_Content_User] FOREIGN KEY([CreatedBy])
 REFERENCES [dbo].[User] ([Id])
-ALTER TABLE [dbo].[Entry] CHECK CONSTRAINT [FK_Entry_User]
-ALTER TABLE [dbo].[Entry]  WITH CHECK ADD  CONSTRAINT [FK_Entry_User1] FOREIGN KEY([LastUpdatedBy])
+ALTER TABLE [dbo].[Content] CHECK CONSTRAINT [FK_Content_User]
+ALTER TABLE [dbo].[Content]  WITH CHECK ADD  CONSTRAINT [FK_Content_User1] FOREIGN KEY([LastUpdatedBy])
 REFERENCES [dbo].[User] ([Id])
-ALTER TABLE [dbo].[Entry] CHECK CONSTRAINT [FK_Entry_User1]
+ALTER TABLE [dbo].[Content] CHECK CONSTRAINT [FK_Content_User1]

@@ -20,6 +20,7 @@ CREATE TABLE [dbo].[UserVerification](
 ) ON [PRIMARY]
 
 ALTER TABLE [dbo].[UserVerification] ADD  CONSTRAINT [DF_UserVerification_Id]  DEFAULT (newsequentialid()) FOR [Id]
+ALTER TABLE [dbo].[UserVerification] ADD  CONSTRAINT [DF_UserVerification_Active]  DEFAULT ((1)) FOR [Active]
 ALTER TABLE [dbo].[UserVerification]  WITH CHECK ADD  CONSTRAINT [FK_UserVerification_User] FOREIGN KEY([UserId])
 REFERENCES [dbo].[User] ([Id])
 ALTER TABLE [dbo].[UserVerification] CHECK CONSTRAINT [FK_UserVerification_User]
