@@ -1,4 +1,4 @@
-/****** Object:  Table [dbo].[Section]    Committed by VersionSQL https://www.versionsql.com ******/
+﻿/****** Object:  Table [dbo].[Section]    Committed by VersionSQL https://www.versionsql.com ******/
 
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
@@ -20,7 +20,6 @@ CREATE TABLE [dbo].[Section](
 ALTER TABLE [dbo].[Section] ADD  CONSTRAINT [DF_Section_Id]  DEFAULT (newsequentialid()) FOR [Id]
 ALTER TABLE [dbo].[Section]  WITH CHECK ADD  CONSTRAINT [FK_Section_User] FOREIGN KEY([CreatedBy])
 REFERENCES [dbo].[User] ([Id])
-ALTER TABLE [dbo].[Section] CHECK CONSTRAINT [FK_Section_User]
-ALTER TABLE [dbo].[Section]  WITH CHECK ADD  CONSTRAINT [FK_Section_User1] FOREIGN KEY([LastUpdatedBy])
+ALTER TABLE [dbo].[Section] CHECK CONSTRAINT [FK_Section_User]LTER TABLE [dbo].[Section]  WITH CHECK ADD  CONSTRAINT [FK_Section_User1] FOREIGN KEY([LastUpdatedBy])
 REFERENCES [dbo].[User] ([Id])
 ALTER TABLE [dbo].[Section] CHECK CONSTRAINT [FK_Section_User1]
