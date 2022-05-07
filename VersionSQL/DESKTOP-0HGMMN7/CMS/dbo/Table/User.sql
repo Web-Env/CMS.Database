@@ -12,6 +12,7 @@ CREATE TABLE [dbo].[User](
 	[ExpiresOn] [datetime] NULL,
 	[IsAdmin] [bit] NOT NULL,
 	[IsVerified] [bit] NOT NULL,
+	[Deleted] [bit] NOT NULL,
 	[CreatedOn] [datetime] NOT NULL,
 	[CreatedBy] [uniqueidentifier] NOT NULL,
 	[LastUpdatedOn] [datetime] NOT NULL,
@@ -25,3 +26,4 @@ CREATE TABLE [dbo].[User](
 ALTER TABLE [dbo].[User] ADD  CONSTRAINT [DF_User_Id]  DEFAULT (newsequentialid()) FOR [Id]
 ALTER TABLE [dbo].[User] ADD  CONSTRAINT [DF_User_IsAdmin]  DEFAULT ((0)) FOR [IsAdmin]
 ALTER TABLE [dbo].[User] ADD  CONSTRAINT [DF_User_IsVerified]  DEFAULT ((0)) FOR [IsVerified]
+ALTER TABLE [dbo].[User] ADD  CONSTRAINT [DF_User_Deleted]  DEFAULT ((0)) FOR [Deleted]
