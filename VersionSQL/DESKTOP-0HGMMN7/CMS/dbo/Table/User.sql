@@ -9,6 +9,7 @@ CREATE TABLE [dbo].[User](
 	[UserSecret] [char](344) NOT NULL,
 	[FirstName] [varchar](50) NOT NULL,
 	[LastName] [varchar](100) NOT NULL,
+	[ExpiresOn] [datetime] NULL,
 	[IsAdmin] [bit] NOT NULL,
 	[IsVerified] [bit] NOT NULL,
 	[CreatedOn] [datetime] NOT NULL,
